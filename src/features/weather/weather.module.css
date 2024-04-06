@@ -1,0 +1,9 @@
+.weather {
+    padding:10px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+  }

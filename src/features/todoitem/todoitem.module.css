@@ -1,0 +1,52 @@
+.todoitem {
+    margin:10px;
+    padding: 5px;
+    color:grey;
+    background-color: antiquewhite;
+    
+}
+
+.wrapper {
+    display:flex;
+    flex-direction: row;
+    align-items: left;
+    align-content: left;
+    margin:-5px;
+    
+}
+
+.buttonRemove {
+    border-radius:5px;
+    background-color: rgb(255, 119, 0);
+    opacity: 0;
+    font-size: 8px;
+    font-weight: bold;
+    color: white;
+    border-style: solid;
+    border-color:rgb(255, 119, 0);
+    margin-left:5px;
+    margin-right:5px;
+    
+}
+
+.wrapper:hover .buttonRemove {
+    opacity: 1;
+}
+
+.buttonDone {
+    border-radius:5px;
+    background-color: rgb(98, 128, 61);
+    opacity: 0;
+    font-size: 8px;
+    font-weight: bold;
+    color: white;
+    border-style: solid;
+    border-color: rgb(98, 128, 61);
+    margin-left:5px;
+    margin-right:5px;
+   
+}
+
+.wrapper:hover .buttonDone {
+    opacity: 1;
+}
