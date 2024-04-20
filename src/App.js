@@ -7,6 +7,7 @@ import getWeather from './utils/getWeather.js';
 import getRandomPhoto from './utils/getRandomPhoto.js';
 import getRandomQuote  from './utils/getRandomQuote.js';
 import React, {useState} from 'react';
+import generateId from './utils/generateId.js';
 
 const weatherResult = await getWeather();
 const RandomPhoto = await getRandomPhoto();
@@ -16,21 +17,25 @@ const randomQuote = await getRandomQuote();
 
 //const lijstje = ["itemTopic1","item2","item3","item4","item5","itemTopic1","item2","item3","item4","item5"]
 
+//const test = [{id: 1, doel:"zwemmen"}, {id:2, doel:'tuinieren'}]
+
 function App() {
-const [goals, setGoals] = useState([]);
+const [goals, setGoals] = useState([{id: 1, doel:"zwemmen"}, {id:2, doel:'tuinieren'}]);
 
 
 const addGoal = (goal) => {
-   setGoals(goals =>  [goal, ...goals])
+   setGoals((goals) => ([{ doel: goal, id: generateId() }, ...goals ]))
 }
 
-const removeGoal = () => {
-  alert('removed')
+const removeGoal = (goalIdToRemove) => {
+  setGoals((goals) => goals.filter(
+    (goal) => goal.id !== goalIdToRemove
+  ))
+  
 }
 
-const doneGoal = () => {
-  alert('done')
-}
+
+
 
 //console.log(goals);
 
@@ -46,7 +51,7 @@ const doneGoal = () => {
         </div>
         <div>
           < Searchbar addGoal={addGoal}/>
-          < Todolist lijstje={goals} removeGoal={removeGoal} doneGoal={doneGoal}/>
+          < Todolist lijstje={goals} removeGoal={removeGoal} />
         </div>
         <div>
           < Quote 

@@ -10,9 +10,11 @@ const Todolist = (props) => {
         {props.lijstje.map((item) => {
         return (
                 <Todoitem
+                    //key={props.lijstje.id}
                     item={item}
                     removeItem={props.removeGoal}
-                    doneItem={props.doneGoal}
+                    
+                    //doneItem={props.doneGoal}
                 />
             
             )}
